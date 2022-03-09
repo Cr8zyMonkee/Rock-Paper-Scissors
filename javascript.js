@@ -14,21 +14,14 @@ let playerScore = 0;
                 return computerSelection;
             }
 
-            function getPlayerSelection(string) {
+            function getPlayerSelection() {
 
-                let selection = prompt("Rock, Paper, or Scissors?");
-                
-
-                if (selection.toLowerCase() === "rock")
-                    playerSelection = "rock";
-                else if (selection.toLowerCase() === "paper")
-                    playerSelection = "paper";
-                else if (selection.toLowerCase() === "scissors")
-                    playerSelection = "scissors";
-                else
-                    alert("Please enter either Rock, Paper, or Scissors.")
-
-                return playerSelection;
+                const buttons = document.querySelectorAll('button');
+                buttons.forEach((button) => {
+                    button.addEventListener('click', () => {
+                        return button.id;
+                    })
+                })
             }
 
             function randomIntFromInterval(min,max) {
@@ -92,37 +85,4 @@ let playerScore = 0;
                 
             }
 
-            function game() {
-
-               let playerScore = 0;
-               let computerScore = 0;
-               let ties = 0;
-            
-
-               for (let games = 0; games < 5; games++) {
-                
-                let result = playRound();
-                   
-                if (result === "player"){
-                    playerScore++;
-                }
-                else if (result === "computer"){
-                    computerScore++;
-                }
-                else{
-                    ties++;
-                }
-               }
-
-               console.log("Player Score: " + playerScore);
-               console.log("Computer Score: " + computerScore);
-               console.log("Ties: " + ties);
-               if (playerScore > computerScore){
-                   return "You Win!";
-               }
-               else if (playerScore < computerScore){
-                   return "You Lose!";
-               }
-            }
-
-            console.log(game());
+            document.getElementsByTagName('button').onclick = playRound();
