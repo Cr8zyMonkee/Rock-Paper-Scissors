@@ -8,13 +8,23 @@
 
 <body>
     <div id='results'>
-        <div id='resultsTitle'> Results</div>
-        <div id='playerScore'>0</div>
-        <div id='computerScore'>0</div>
-        <div id='ties'>0</div>
+        <div id='resultsTitle'><b>Results</b></div>
+        <div class='scores'>
+            <div class='player'>
+                <div id='playerScore'>0</div>
+                <div id='playerName'>Player Score</div>  
+            </div>
+            <div class='computer'>
+                <div id='computerScore'>0</div>
+                <div id='computerName'>Computer Score</div>
+            </div>
+            <div class='draw'>
+                <div id='ties'>0</div>
+                <div id='tiesName'>Ties</div>
+            </div>
+        </div>
     </div>
         
-    </div>
     <div id='container'>
         <button id="rock" type="button">Rock</button>
         <button id="paper" type="button">Paper</button>
